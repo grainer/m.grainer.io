@@ -1,7 +1,11 @@
 <template>
   <div class="w-full flex flex-row">
     <div v-show="$route.hash === '#home'" class="fixed inset-0 w-screen h-screen">
-      <video class="w-full bg-green-dark" src="@/assets/vid/seed.mp4" autoplay="true" loop="true"></video>
+      <video class="w-full bg-green-dark" autoplay="true" loop="true">
+        <source src="@/assets/vid/seed-m-cp.webm" type="video/webm" />
+
+        <source src="@/assets/vid/seed-m-cp.mp4" type="video/mp4" />
+      </video>
     </div>
     <div class="w-1/2 flex justify-center align-middle z-10 bottom-0 mx-auto h-screen">
       <h1 class="font-h h-1/2 my-auto start-line text-5xl">
@@ -18,7 +22,7 @@ export default {
 }
 </script>
 
-<style >
+<style>
 .start-line {
   font-weight: bold;
   font-stretch: normal;
