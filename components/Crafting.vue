@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full flex mx-48 flex-row">
-    <div class="w-1/2 z-10">
-      <h1 class="font-h craft-line mt-3">
+  <div class="w-full flex flex-row">
+    <div class="w-2/3 z-10 mx-auto">
+      <h1 class="font-h craft-line text-3xl mt-3">
         <div>Crafting Robust</div>
         <div>
           Enterprise
@@ -17,7 +17,6 @@
         @click="goToAbout"
       >About Us</button>
     </div>
-    <div class="w-1/2"></div>
   </div>
 </template>
 
@@ -33,7 +32,6 @@ export default {
 
 <style>
 .craft-line {
-  font-size: 50px;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
