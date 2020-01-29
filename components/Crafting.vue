@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex flex-row">
     <div class="w-2/3 z-10 mx-auto">
-      <h1 class="font-h craft-line text-3xl mt-3">
+      <h1 class="font-h craft-line text-xl sm:text-5xl mt-3">
         <div>Crafting Robust</div>
         <div>
           Enterprise
