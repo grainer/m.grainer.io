@@ -56,7 +56,7 @@ export const actions = {
     })
     state.pageable.init()
     // set the orientation
-    state.pageable.orientate('horizontal') // or vertical
+    state.pageable.orientate('vertical') // or horizontal
     state.pageIndex = state.pageable.index
     state.percent = (state.pageable.index * 100) / state.pageable.pageCount
   },

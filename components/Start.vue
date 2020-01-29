@@ -1,15 +1,14 @@
 <template>
   <div class="w-full flex flex-row">
     <div v-show="$route.hash === '#home'" class="fixed inset-0 w-screen h-screen">
-      <video class="w-full" src="@/assets/vid/seed.mp4" autoplay="true" loop="true"></video>
+      <video class="w-full bg-green-dark" src="@/assets/vid/seed.mp4" autoplay="true" loop="true"></video>
     </div>
-    <div class="w-1/2 z-10">
-      <h1 class="font-h start-line ml-48">
+    <div class="w-1/2 flex justify-center align-middle z-10 bottom-0 mx-auto h-screen">
+      <h1 class="font-h h-1/2 my-auto start-line text-5xl">
         Everything Starts With an
         <span class="idea px-4">idea</span>
       </h1>
     </div>
-    <div class="w-1/2"></div>
   </div>
 </template>
 
@@ -21,7 +20,6 @@ export default {
 
 <style >
 .start-line {
-  font-size: 100px;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
