@@ -47,6 +47,7 @@ $idle-color: #02f6b527;
 .nav {
   position: relative;
   width: 8em;
+  z-index: 100;
   margin: 0 0 0 3em;
 
   .nav__item {
