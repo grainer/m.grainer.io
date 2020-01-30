@@ -1,10 +1,9 @@
-<template>
+<template functional>
   <svg
-    v-if="$route.hash !== '#contact'"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 91.68555 91.6543"
     class="z-50 absolute bottom-0 right-0 mr-4 md:mr-16 lg:mr-32 w-12 md:w-16 lg:w-20 mb-5 md:mb-20 lg:mb-32 interactive scale-in-center"
-    @click="nextPage"
+    @click="props.onclick"
   >
     <title>Next</title>
     <g id="Arrow">
@@ -50,6 +49,13 @@
 
 <script>
 export default {
+  functional: true,
+  props: {
+    onclick: {
+      type: Function,
+      default: () => console.log('i is clicked wkwkwk')
+    }
+  },
   methods: {
     nextPage() {
       this.$store.commit('nextPage')

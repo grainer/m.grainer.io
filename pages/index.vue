@@ -22,6 +22,7 @@
         <start></start>
       </div>
     </div>
+    <next></next>
   </div>
 </template>
 
@@ -30,10 +31,12 @@
 import Pageable from 'pageable'
 import Start from '@/components/Start'
 import Pagination from '@/components/Pagination'
+import Next from '@/components/Next'
 export default {
   components: {
     start: Start,
-    pagination: Pagination
+    pagination: Pagination,
+    next: Next
   },
   data() {
     return {
@@ -51,8 +54,8 @@ export default {
     this.pages = new Pageable(contentHolder, {
       pips: false,
       orientation: 'vertical',
+      // when scroll animation finish, update the current page number
       onFinish: ({ index }) => {
-        // when scroll animation finish, update the current page number
         this.activePage = index + 1
       }
     })
@@ -76,6 +79,7 @@ $idle-color: #02f6b527;
   justify-content: space-around;
   text-align: center;
   width: 20%;
+  max-width: 20%;
   z-index: 100;
   align-content: center;
   line-height: 10vh;
@@ -83,6 +87,7 @@ $idle-color: #02f6b527;
 
 #index-content {
   width: 80%;
+  max-width: 80%;
   z-index: 99;
 }
 </style>
