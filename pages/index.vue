@@ -1,107 +1,174 @@
 <template>
-  <div>
-    <section id="snap-container">
-      <div class="page flex justify-center items-center" data-anchor="home">
+  <div id="index">
+    <div id="index-nav" class="nav--desta">
+      <svg class="hidden">
+        <defs>
+          <symbol id="icon-triangle" viewBox="0 0 24 24">
+            <title>triangle</title>
+            <path
+              d="M4.5,19.8C4.5,19.8,4.5,19.8,4.5,19.8V4.2c0-0.3,0.2-0.5,0.4-0.7c0.2-0.1,0.5-0.1,0.8,0l13.5,7.8c0.2,0.1,0.4,0.4,0.4,0.7c0,0.3-0.2,0.5-0.4,0.7L5.7,20.4c-0.1,0.1-0.3,0.1-0.5,0.1C4.8,20.6,4.5,20.2,4.5,19.8z M6,5.6v12.8L17.2,12L6,5.6z"
+            />
+          </symbol>
+        </defs>
+      </svg>
+      <nav class="nav nav--desta">
+        <a
+          v-for="number in noOfPages"
+          :key="number"
+          :class="`nav__item ${number === activePage ? 'nav__item--current' : '' }`"
+          :aria-label="`Page ${number}`"
+          :href="`#page${number}`"
+        >
+          <svg class="nav__icon">
+            <use xlink:href="#icon-triangle" />
+          </svg>
+          <span class="nav__item-title">{{ number }}</span>
+        </a>
+      </nav>
+    </div>
+    <div id="index-content">
+      <div data-anchor="page1">
         <start></start>
       </div>
-      <div class="page flex justify-center items-center" data-anchor="us">
-        <crafting></crafting>
+      <div data-anchor="page2">
+        <start></start>
       </div>
-      <div class="page flex justify-center items-center" data-anchor="help">
-        <help></help>
+      <div data-anchor="page3">
+        <start></start>
       </div>
-      <div class="page flex justify-center items-center" data-anchor="rethink">
-        <rethink></rethink>
+      <div data-anchor="page4">
+        <start></start>
       </div>
-      <div class="page flex justify-center items-center" data-anchor="tech">
-        <tech></tech>
-      </div>
-      <div class="page flex justify-center items-center" data-anchor="contact">
-        <contact title="Contact Us" :form="false"></contact>
-      </div>
-    </section>
-    <!-- Dot Navigation begins -->
-    <div class="fixed bottom-0 w-full pb-10 dotstyle dotstyle-smalldotstroke">
-      <!-- Next button -->
-      <next-bt class="interactive"></next-bt>
-
-      <!-- <ul class="flex justify-center items-center">
-        <li v-for="(page, index) in pages" :key="index" :class="`${index === pageIndex ? 'current' : ''} ${index < pageIndex ? 'past' : ''}`">
-          <a :href="`#${page}`" class="interactive">Home</a>
-        </li>
-      </ul>-->
     </div>
   </div>
 </template>
 
 <script>
-// import _ from 'lodash-es'
+// eslint-disable-next-line no-unused-vars
 import Pageable from 'pageable'
-import { EventBus } from '@/plugins/eventBus.js'
-const Start = () => import('@/components/Start')
-const Crafting = () => import('@/components/Crafting')
-const Help = () => import('@/components/Help')
-const Rethink = () => import('@/components/Rethink')
-const Tech = () => import('@/components/Tech')
-const Contact = () => import('@/components/Contact')
-const Next = () => import('@/components/Next')
-
+import Start from '@/components/Start'
 export default {
-  name: 'Index',
   components: {
-    Start,
-    Crafting,
-    Help,
-    Rethink,
-    Tech,
-    Contact,
-    'next-bt': Next
+    // eslint-disable-next-line vue/no-unused-components
+    start: Start
   },
   data() {
     return {
-      pages: ['home', 'us', 'help', 'rethink', 'tech', 'contact']
-    }
-  },
-  computed: {
-    pageIndex() {
-      return this.$store.getters.getIndex
-    },
-    precent() {
-      return this.$store.getters.getPercentage
-    },
-    pageable() {
-      return this.$store.getters.getPageable
+      content: null,
+      noOfPages: 0,
+      activePage: 1
     }
   },
   mounted() {
-    // we emit this to refresh the interactive cursors elements
-    EventBus.$emit('inner-routing')
-
-    this.$store.commit(
-      'populate',
-      new Pageable('#snap-container', {
-        delay: 1000,
-        throttle: 1500
-      })
-    )
-
-    this.$store.dispatch('init')
-
-    this.$store.dispatch('listen')
-  },
-  destroyed() {
-    this.$store.dispatch('clean')
-  },
-  methods: {
-    nextPage() {
-      this.$store.commit('nextPage')
-    },
-    prevPage() {
-      this.$store.commit('prevPage')
-    }
+    const content = document.getElementById('index-content')
+    this.noOfPages = content.childElementCount
+    this.content = new Pageable(content, {
+      pips: false,
+      orientation: 'vertical',
+      onFinish: ({ index }) => {
+        this.activePage = index + 1
+      }
+    })
   }
 }
 </script>
+<style lang="scss" scoped>
+$grainer-color: #02f6b6;
+$idle-color: #02f6b527;
+#index {
+  top: 0%;
+  width: 100vw;
+  height: 100vh;
+  display: inline-flex;
+}
 
-<style>
+#index-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  width: 20%;
+  z-index: 100;
+  align-content: center;
+  line-height: 10vh;
+}
+
+#index-content {
+  width: 80%;
+  z-index: 99;
+}
+
+.nav {
+  position: relative;
+  width: 8em;
+  margin: 0 0 0 3em;
+
+  .nav__item {
+    line-height: 1;
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0;
+    color: $idle-color;
+    border: 0;
+    background: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    :focus {
+      outline: none;
+    }
+  }
+}
+
+/* this is the css for the dot pagination.  */
+
+.nav--desta .nav__item {
+  width: 5em;
+  height: 3.5em;
+}
+
+.nav--desta .nav__icon {
+  position: absolute;
+  top: 0.2em;
+  left: 0;
+  width: 1.5em;
+  height: 1.5em;
+  -webkit-transform: rotate3d(0, 0, 1, -90deg);
+  transform: rotate3d(0, 0, 1, -90deg);
+  -webkit-transition: -webkit-transform 0.5s, fill 0.5s;
+  transition: transform 0.5s, fill 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  fill: currentColor;
+}
+
+.nav--desta .nav__item--current .nav__icon {
+  -webkit-transform: rotate3d(0, 0, 1, 0deg);
+  transform: rotate3d(0, 0, 1, 0deg);
+  fill: $grainer-color;
+}
+
+.nav--desta .nav__item-title {
+  font-family: 'Roboto Condensed', sans-serif;
+  line-height: 2;
+  display: block;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  color: $grainer-color;
+  -webkit-transform: translate3d(-10px, -10px, 0);
+  transform: translate3d(-10px, -10px, 0);
+  -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.nav--desta .nav__item--current .nav__item-title {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
 </style>

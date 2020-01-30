@@ -1,14 +1,13 @@
 <template>
-  <div class="w-full flex flex-row">
-    <div v-show="$route.hash === '#home'" class="fixed inset-0 w-screen h-screen">
-      <video class="w-full bg-green-dark" src="@/assets/vid/seed.mp4" autoplay="true" loop="true"></video>
-    </div>
-    <div class="w-1/2 flex justify-center align-middle z-10 bottom-0 mx-auto h-screen">
-      <h1 class="font-h h-1/2 my-auto start-line text-5xl">
-        Everything Starts With an
-        <span class="idea px-4">idea</span>
-      </h1>
-    </div>
+  <div class="container">
+    <video autoplay muted loop>
+      <source :src="require('@/assets/vid/seed.mp4')" type="video/mp4" />
+    </video>
+
+    <h1>
+      Everything Starts With an
+      <span class="idea px-4">idea</span>
+    </h1>
   </div>
 </template>
 
@@ -17,18 +16,15 @@ export default {
   //
 }
 </script>
+<style lang="scss" scoped>
+.container {
+  video {
+    position: absolute;
+    left: 0px;
+  }
 
-<style >
-.start-line {
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: 2.5px;
-  text-align: left;
-}
-.idea {
-  color: #011b14;
-  background-color: #02f6b6;
+  h1 {
+    position: relative;
+  }
 }
 </style>
