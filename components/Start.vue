@@ -18,8 +18,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 .container {
+  width: 100%;
   video {
     position: absolute;
+    width: 100vh;
     left: 0px;
   }
 
