@@ -12,16 +12,17 @@
       <p
         class="font-p mt-5"
       >We are an IT company with expertise in Blockchain and Artificial Intelligence.</p>
-      <button
-        @click="goToAbout"
-        class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-10 font-sh outline-none slide interactive"
-      >About Us</button>
+      <gbutton addclass="mt-10">Inquire</gbutton>
     </div>
   </div>
 </template>
 
 <script>
+import GButton from '@/components/GButton'
 export default {
+  components: {
+    gbutton: GButton
+  },
   methods: {
     goToAbout() {
       this.$router.push('/about')

@@ -1,0 +1,34 @@
+<template functional>
+  <button
+    @click="props.onclick"
+    :class="`px-${props.padx} py-${props.pady} rounded-lg rounded-tr-none border-gr-green-light border-2 font-sh outline-none slide interactive ${props.addclass}`"
+  >
+    <slot></slot>
+  </button>
+</template>
+
+<script>
+export default {
+  functional: true,
+  props: {
+    onclick: {
+      type: Function,
+      default: () => {
+        console.log('i is clicked wkwkwk')
+      }
+    },
+    pady: {
+      type: String,
+      default: '2'
+    },
+    padx: {
+      type: String,
+      default: '6'
+    },
+    addclass: {
+      type: String,
+      default: ''
+    }
+  }
+}
+</script>
