@@ -9,9 +9,9 @@
         class="swiper-inner h-full w-full mt-5 flex justify-center items-start flex-col relative overflow-hidden"
       >
         <swiper
-          class="w-full flex justify-center items-center"
           :options="swiperOption"
           @slideChange="setStyle"
+          class="w-full flex justify-center items-center"
         >
           <div slot="pagination" class="swiper-pagination absolute top-0 ml-5 w-2/3"></div>
           <swiper-slide>
@@ -23,9 +23,9 @@
               >We offer consulting and technology implementation services to businesses that want to re-define their customer success stories through digital transformation.</p>
 
               <button
-                class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-5 font-sh outline-none slide interactive"
-                type="submit"
                 @click="goToContact"
+                type="submit"
+                class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-5 font-sh outline-none slide interactive"
               >Talk To Us</button>
             </div>
           </swiper-slide>
@@ -38,9 +38,9 @@
               >Our dedicated team of technology experts partner with you and usher you through every step of the way to translate your ideas into robust solutions.</p>
 
               <button
-                class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-5 font-sh outline-none slide interactive"
-                type="submit"
                 @click="goToContact"
+                type="submit"
+                class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-5 font-sh outline-none slide interactive"
               >Get In Touch</button>
             </div>
           </swiper-slide>
@@ -52,9 +52,9 @@
                 class="mt-4"
               >We constantly research and develop solutions for the right use case and corresponding market. We are passionate about emerging technologies in the areas of blockchain, artificial intelligence (AI), machine learning, cybersicurity, data sceince, and the Internet of Things.</p>
               <button
-                class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-5 font-sh outline-none slide interactive"
-                type="submit"
                 @click="goToContact"
+                type="submit"
+                class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-5 font-sh outline-none slide interactive"
               >Reach Out</button>
             </div>
           </swiper-slide>
@@ -116,7 +116,7 @@ export default {
                                     background: #02f6b6 !important;`
 
       const shadow = document.getElementsByClassName('swiper-cube-shadow')
-      shadow[0].style = `pointer-events: none !important;`
+      shadow[0].style = 'pointer-events: none !important;'
     },
     goToContact() {
       this.$store.commit('goto', '#contact')

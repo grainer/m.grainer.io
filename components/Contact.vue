@@ -2,13 +2,13 @@
   <div class="w-full flex flex-row mx-48">
     <MglMap
       v-if="$route.hash === '#contact'"
-      class="absolute inset-0 w-screen h-screen z-0"
       :access-token="accessToken"
       :map-style="mapStyle"
       :center="center"
       :zoom="zoom"
       :pitch="pitch"
       :bearing="bearing"
+      class="absolute inset-0 w-screen h-screen z-0"
     >
       <svg
         class="relative inline-block"

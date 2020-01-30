@@ -1,5 +1,5 @@
 <template functional>
-  <a class="join interactive" :href="props.href" target="_blank">
+  <a :href="props.href" class="join interactive" target="_blank">
     <h1>
       join
       <br />the
