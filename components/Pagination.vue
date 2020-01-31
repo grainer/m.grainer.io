@@ -42,8 +42,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$grainer-color: #02f6b6;
-$idle-color: #02f6b527;
+@import '../assets/css/grainer';
+
 .nav {
   position: relative;
   width: 8em;
@@ -57,9 +57,9 @@ $idle-color: #02f6b527;
     margin: 0;
     padding: 0;
     letter-spacing: 0;
-    color: $idle-color;
     border: 0;
     background: none;
+    color: darken($grainer-color, 30%);
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     :focus {
@@ -68,6 +68,9 @@ $idle-color: #02f6b527;
   }
 }
 
+/*
+  the styling for the triangles
+*/
 .nav--desta .nav__item {
   width: 5em;
   height: 3.5em;

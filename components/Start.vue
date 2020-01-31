@@ -24,6 +24,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import '../assets/css/grainer';
+
 .container {
   display: flex;
   height: 100%;
@@ -53,7 +55,7 @@ export default {
 
     .idea {
       color: black;
-      background-color: #02f6b6;
+      background-color: $grainer-color;
     }
   }
 }

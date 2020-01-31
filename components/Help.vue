@@ -5,57 +5,46 @@
       <h1 class="font-h craft-line sm:text-4xl ml-3 w-1/2">How Can We Help You?</h1>
     </div>
     <div class="w-full h-full flex justify-center items-center">
-      <div
-        class="swiper-inner h-full w-full mt-5 flex justify-center items-start flex-col relative overflow-hidden"
-      >
-        <swiper
-          :options="swiperOption"
-          @slideChange="setStyle"
-          class="w-full flex justify-center items-center"
-        >
+      <div class="swiper-inner h-full w-full mt-5 flex justify-center items-start flex-col relative overflow-hidden">
+        <swiper :options="swiperOption" class="w-full flex justify-center items-center" @slideChange="setStyle">
           <div slot="pagination" class="swiper-pagination absolute top-0 ml-5 w-2/3"></div>
           <swiper-slide>
             <div class="p-10">
               <h1 class="font-h craft-line text-4xl">Consulting</h1>
               <div class="w-16 h-3 bg-gr-green-light mt-2"></div>
-              <p
-                class="mt-4"
-              >We offer consulting and technology implementation services to businesses that want to re-define their customer success stories through digital transformation.</p>
+              <p class="mt-4">
+                We offer consulting and technology implementation services to businesses that want to re-define their customer success stories through digital transformation.
+              </p>
 
-              <button
-                @click="goToContact"
-                type="submit"
-                class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-5 font-sh outline-none slide interactive"
-              >Talk To Us</button>
+              <button type="submit" class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-5 font-sh outline-none slide interactive" @click="goToContact">
+                Talk To Us
+              </button>
             </div>
           </swiper-slide>
           <swiper-slide>
             <div class="p-10">
               <h1 class="font-h craft-line">Development</h1>
               <div class="w-16 h-3 bg-gr-green-light mt-2"></div>
-              <p
-                class="mt-4"
-              >Our dedicated team of technology experts partner with you and usher you through every step of the way to translate your ideas into robust solutions.</p>
+              <p class="mt-4">
+                Our dedicated team of technology experts partner with you and usher you through every step of the way to translate your ideas into robust solutions.
+              </p>
 
-              <button
-                @click="goToContact"
-                type="submit"
-                class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-5 font-sh outline-none slide interactive"
-              >Get In Touch</button>
+              <button type="submit" class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-5 font-sh outline-none slide interactive" @click="goToContact">
+                Get In Touch
+              </button>
             </div>
           </swiper-slide>
           <swiper-slide>
             <div class="p-10">
               <h1 class="font-h craft-line">Innovation Hub</h1>
               <div class="w-16 h-3 bg-gr-green-light mt-2"></div>
-              <p
-                class="mt-4"
-              >We constantly research and develop solutions for the right use case and corresponding market. We are passionate about emerging technologies in the areas of blockchain, artificial intelligence (AI), machine learning, cybersicurity, data sceince, and the Internet of Things.</p>
-              <button
-                @click="goToContact"
-                type="submit"
-                class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-5 font-sh outline-none slide interactive"
-              >Reach Out</button>
+              <p class="mt-4">
+                We constantly research and develop solutions for the right use case and corresponding market. We are passionate about emerging technologies in the areas of
+                blockchain, artificial intelligence (AI), machine learning, cybersicurity, data sceince, and the Internet of Things.
+              </p>
+              <button type="submit" class="px-6 py-2 rounded-lg rounded-tr-none border-gr-green-light border-2 mt-5 font-sh outline-none slide interactive" @click="goToContact">
+                Reach Out
+              </button>
             </div>
           </swiper-slide>
         </swiper>

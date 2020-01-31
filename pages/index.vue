@@ -1,16 +1,11 @@
 <template>
   <div id="index">
-    <div id="index-nav" class="nav--desta">
-      <!-- the trinagle dot pagination -->
+    <div id="index-nav">
       <pagination :totalpages="noOfPages" :currentpage="activePage"></pagination>
-      <!--
-      add your pages here. wrap it in a
-      <div data-anchor="page{ number }}">{ your component }</div>
-      -->
     </div>
     <div id="index-content">
       <div data-anchor="page1">
-        <start :showvideo="$route.hash === '#page1'"></start>
+        <start :showvideo="activePage === 1"></start>
       </div>
       <div data-anchor="page2">
         <crafting></crafting>
@@ -38,10 +33,13 @@ export default {
   components: {
     // eslint-disable-next-line vue/no-unused-components
     start: Start,
+    // eslint-disable-next-line vue/no-unused-components
     pagination: Pagination,
+    // eslint-disable-next-line vue/no-unused-components
     next: Next,
     // eslint-disable-next-line vue/no-unused-components
     crafting: Crafting,
+    // eslint-disable-next-line vue/no-unused-components
     help: Help
   },
   data() {
@@ -56,15 +54,16 @@ export default {
     // get the element that holds the pages
     const contentHolder = document.getElementById('index-content')
     this.noOfPages = contentHolder.childElementCount
-    // eslint-disable-next-line no-undef
-    console.log(this.$route.hash)
-    // create the page scroller in the contentHolder.
+
+    /*
+      Pageable, a full page scrolling utility.
+      original works by Karl (https://github.com/Mobius1/Pageable)
+    */
     this.pages = new Pageable(contentHolder, {
-      pips: false,
+      pips: false, // we need no pips
       orientation: 'vertical',
-      // when scroll animation finish, update the current page number
       onFinish: ({ index }) => {
-        this.activePage = index + 1
+        this.activePage = index + 1 // if scroll animation end, update active page no
       }
     })
   }
@@ -72,8 +71,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$grainer-color: #02f6b6;
-$idle-color: #02f6b527;
+@import '../assets/css/grainer';
+
 #index {
   width: 100vw;
   height: 100vh;
@@ -87,9 +86,10 @@ $idle-color: #02f6b527;
   justify-content: space-around;
   text-align: center;
   width: 20%;
+  line-height: 10vh;
   max-width: 20%;
   align-content: center;
-  line-height: 10vh;
+  -webkit-align-content: center;
 }
 
 #index-content {
