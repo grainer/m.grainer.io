@@ -1,47 +1,69 @@
-<template>
-  <div class="w-full flex flex-row">
-    <div class="w-2/3 z-10 mx-auto">
-      <h1 class="font-h craft-line text-xl sm:text-5xl mt-3">
-        <div>Crafting Robust</div>
-        <div>
-          Enterprise
-          <span class="highlight px-4">IT Solutions</span>
-        </div>Is Our Commitment & Passion!
-      </h1>
-      <div class="w-16 h-3 bg-gr-green-light mt-2"></div>
-      <p
-        class="font-p mt-5"
-      >We are an IT company with expertise in Blockchain and Artificial Intelligence.</p>
-      <gbutton addclass="mt-10">Inquire</gbutton>
-    </div>
+<template functional>
+  <div id="crafting">
+    <div v-if="props.showimage" id="crafting-bg"></div>
+    <h1>
+      Crafting robust
+      <br />enterprise
+      <br />
+      <span class="idea px-2">IT Solutions</span>
+      is
+      <br />our commitment and passion
+    </h1>
   </div>
 </template>
 
 <script>
+// eslint-disable-next-line no-unused-vars
 import GButton from '@/components/GButton'
 export default {
-  components: {
-    gbutton: GButton
-  },
-  methods: {
-    goToAbout() {
-      this.$router.push('/about')
+  funtional: true,
+  props: {
+    showimage: {
+      type: Boolean,
+      default: false
     }
   }
 }
 </script>
 
-<style>
-.craft-line {
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.3;
-  letter-spacing: 1.25px;
-  text-align: left;
+<style lang="scss" scoped>
+@import '../assets/css/grainer';
+
+#crafting-bg {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.1;
+  background-image: url('../assets/img/bio.png');
+  background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
-.highlight {
-  color: #011b14;
-  background-color: #02f6b6;
+#crafting {
+  height: 100%;
+  padding: 2rem 3rem 2rem 0rem;
+  align-items: center;
+  display: flex;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.62;
+    letter-spacing: 0.65px;
+    text-align: left;
+    color: #ffffff;
+    z-index: 1;
+  }
+}
+.idea {
+  @include idea;
 }
 </style>

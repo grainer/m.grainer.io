@@ -52,11 +52,10 @@ export default {
     font-weight: bold;
     line-height: 1.42;
     letter-spacing: 1.06px;
+  }
 
-    .idea {
-      color: black;
-      background-color: $grainer-color;
-    }
+  .idea {
+    @include idea;
   }
 }
 </style>

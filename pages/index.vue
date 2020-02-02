@@ -8,7 +8,7 @@
         <start :showvideo="activePage === 1"></start>
       </div>
       <div data-anchor="page2">
-        <crafting></crafting>
+        <crafting :showimage="activePage === 2"></crafting>
       </div>
       <div data-anchor="page3">
         <help></help>
