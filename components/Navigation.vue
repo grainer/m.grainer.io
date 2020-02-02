@@ -10,7 +10,15 @@
         <span class="hamburger-inner"></span>
       </span>
     </button>
-    <div v-show="isOpen" class="content">jokowi wkwkw jokowi wkwkwk jokowi wkwkwkw</div>
+    <!-- the menu box that will show on user click -->
+    <div v-if="isOpen" class="content">
+      <ul>
+        <li v-for="({link, title}, index) in menuItems" :key="index">
+          <!-- <nuxt-link :to="link">{{ title }}</nuxt-link> -->
+          <a :href="link">{{ title }}</a>
+        </li>
+      </ul>
+    </div>
   </nav>
 </template>
 
@@ -29,7 +37,25 @@ export default {
   },
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      menuItems: [
+        {
+          link: '/',
+          title: 'Home'
+        },
+        {
+          link: 'about',
+          title: 'About Us'
+        },
+        {
+          link: 'career',
+          title: 'Career'
+        },
+        {
+          link: '/contact',
+          title: 'Contact Us'
+        }
+      ]
     }
   },
   methods: {
@@ -45,17 +71,12 @@ export default {
 
 .navbar {
   position: fixed;
-  z-index: 100;
+  z-index: 101;
   top: 0%;
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
-  .content {
-    width: 100vw;
-    padding: 1rem 1rem 1rem 1rem;
-  }
 
   &:not(.transparent) {
     background-color: rgba($bg-color, 0.8);
@@ -68,6 +89,33 @@ export default {
 
   .transparent {
     background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.content {
+  $darkened: darken($grainer-color, 10);
+  width: 100vw;
+  padding: 1rem 2rem 1rem 2rem;
+  // border-top: 2px solid $darkened;
+  // border-bottom: 2px solid $darkened;
+
+  ul {
+    font-size: 1.2rem;
+    font-family: 'Taviraj';
+    line-height: 2.5rem;
+    text-align: center;
+
+    li {
+      &:not(:last-child) {
+        border-bottom: 0.5px solid $grainer-color;
+      }
+      /* highlight on click */
+      &:active {
+        background-color: darken($grainer-color, 2);
+        background-size: 100%;
+        transition: background 0s;
+      }
+    }
   }
 }
 </style>
