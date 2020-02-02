@@ -9,14 +9,17 @@
       is
       <br />our commitment and passion
     </h1>
+    <gbutton addclass="gbutton">Contact Us</gbutton>
   </div>
 </template>
 
 <script>
-// eslint-disable-next-line no-unused-vars
+import Vue from 'vue'
 import GButton from '@/components/GButton'
+Vue.component('gbutton', GButton)
+
 export default {
-  funtional: true,
+  functional: true,
   props: {
     showimage: {
       type: Boolean,
@@ -47,11 +50,14 @@ export default {
   background-attachment: fixed;
   background-position: center;
 }
+
 #crafting {
   height: 100%;
-  padding: 2rem 3rem 2rem 0rem;
-  align-items: center;
+  padding: 2rem 5rem 2rem 0rem;
+  justify-content: center;
+  align-content: center;
   display: flex;
+  flex-direction: column;
 
   h1 {
     font-size: 2rem;
@@ -61,6 +67,10 @@ export default {
     text-align: left;
     color: #ffffff;
     z-index: 1;
+  }
+
+  .gbutton {
+    width: 50%;
   }
 }
 .idea {

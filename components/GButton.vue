@@ -23,7 +23,7 @@ export default {
     },
     padx: {
       type: String,
-      default: '6'
+      default: '2'
     },
     addclass: {
       type: String,
