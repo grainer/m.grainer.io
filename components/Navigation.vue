@@ -1,11 +1,16 @@
 <template>
   <nav :class="`navbar ${!isOpen && transparent ? 'transparent' : ''} ${addclass}`">
     <img :src="require('@/static/logo@2x.png')" />
-    <button :class="`hamburger hamburger--minus ${isOpen ? 'is-active' : ''}`" type="button" @click="toggle">
+    <button
+      :class="`hamburger hamburger--minus ${isOpen ? 'is-active' : ''}`"
+      type="button"
+      @click="toggle"
+    >
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
       </span>
     </button>
+    <div v-show="isOpen" class="content">jokowi wkwkw jokowi wkwkwk jokowi wkwkwkw</div>
   </nav>
 </template>
 
@@ -44,11 +49,17 @@ export default {
   top: 0%;
   width: 100vw;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+
+  .content {
+    width: 100vw;
+    padding: 1rem 1rem 1rem 1rem;
+  }
 
   &:not(.transparent) {
     background-color: rgba($bg-color, 0.8);
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(4px);
   }
 
   img {
