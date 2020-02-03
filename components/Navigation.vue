@@ -1,5 +1,5 @@
 <template>
-  <nav :class="`navbar ${!isOpen && transparent ? 'transparent' : ''} ${addclass}`">
+  <nav :class="`navbar ${!transparent ? 'transparent' : ''} ${addclass}`">
     <img :src="require('@/static/logo@2x.png')" />
     <button
       :class="`hamburger hamburger--minus ${isOpen ? 'is-active' : ''}`"
@@ -16,6 +16,7 @@
         <li v-for="({link, title}, index) in menuItems" :key="index">
           <!-- <nuxt-link :to="link">{{ title }}</nuxt-link> -->
           <a :href="link">{{ title }}</a>
+          <!-- <a @click="goto(link)">{{ title }}</a> -->
         </li>
       </ul>
     </div>
@@ -52,7 +53,7 @@ export default {
           title: 'Career'
         },
         {
-          link: '/contact',
+          link: 'contact',
           title: 'Contact Us'
         }
       ]
@@ -61,6 +62,9 @@ export default {
   methods: {
     toggle() {
       this.isOpen = !this.isOpen
+    },
+    goto(link) {
+      this.$router.push(`${link}`)
     }
   }
 }
