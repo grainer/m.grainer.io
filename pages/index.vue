@@ -14,7 +14,10 @@
         <consultancy></consultancy>
       </div>
       <div data-anchor="page4">
-        <start></start>
+        <development></development>
+      </div>
+      <div data-anchor="page5">
+        <innovation></innovation>
       </div>
     </div>
     <next :onclick="() => pages.next()"></next>
@@ -27,20 +30,19 @@ import Pageable from 'pageable'
 import Start from '@/components/Start'
 import Crafting from '@/components/Crafting'
 import Consultancy from '@/components/Consultancy'
+import Development from '@/components/Development'
+import Innovation from '@/components/Innovation'
 import Pagination from '@/components/Pagination'
 import Next from '@/components/Next'
 export default {
   components: {
-    // eslint-disable-next-line vue/no-unused-components
     start: Start,
-    // eslint-disable-next-line vue/no-unused-components
     pagination: Pagination,
-    // eslint-disable-next-line vue/no-unused-components
     next: Next,
-    // eslint-disable-next-line vue/no-unused-components
     crafting: Crafting,
-    // eslint-disable-next-line vue/no-unused-components
-    consultancy: Consultancy
+    consultancy: Consultancy,
+    development: Development,
+    innovation: Innovation
   },
   data() {
     return {

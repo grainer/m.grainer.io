@@ -4,9 +4,9 @@
       HOW CAN WE
       HELP YOU?
     </h1>
-    <textholder title="CONSULTANCY">
-      We offer consulting and technology implementation services to businesses that want to re-define their customer success stories through digital transformation.
-      Our consulting team helps deliver remarkable enterprise architecture designs, business plan development, proof of concept, process automation and more. We help you make sound decisions and evaluate the right solutions for your business.
+    <textholder title="INNOVATION HUB">
+      We constantly research and develop solutions for the right use case and corresponding market. We are passionate about emerging technologies in the areas of blockchain, artificial intelligence (AI), machine learning, advanced security solutions, data analytics, and the Internet of Things.
+      Grainer is always on the lookout for startups in the ideation stage for incubation.
     </textholder>
     <gbutton addclass="mt-8 mr-20">Talk To Us</gbutton>
   </div>

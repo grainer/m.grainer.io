@@ -4,9 +4,9 @@
       HOW CAN WE
       HELP YOU?
     </h1>
-    <textholder title="CONSULTANCY">
-      We offer consulting and technology implementation services to businesses that want to re-define their customer success stories through digital transformation.
-      Our consulting team helps deliver remarkable enterprise architecture designs, business plan development, proof of concept, process automation and more. We help you make sound decisions and evaluate the right solutions for your business.
+    <textholder title="DEVELOPMENT">
+      Our dedicated team of technology experts partner with you and usher you through every step of the way to translate your ideas into robust solutions.
+      Using cutting edge technologies and best practices, we aim to develop solutions that are scalable, secure, and maintainable, putting you and your company at the forefront of your industry.
     </textholder>
     <gbutton addclass="mt-8 mr-20">Talk To Us</gbutton>
   </div>
