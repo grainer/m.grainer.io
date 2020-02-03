@@ -1,11 +1,7 @@
 <template>
   <nav :class="`navbar ${!transparent ? 'transparent' : ''} ${addclass}`">
-    <img :src="require('@/static/logo@2x.png')" />
-    <button
-      :class="`hamburger hamburger--minus ${isOpen ? 'is-active' : ''}`"
-      type="button"
-      @click="toggle"
-    >
+    <a href="https://m.grainer.io"><img :src="require('@/static/logo@2x.png')"/></a>
+    <button :class="`hamburger hamburger--minus ${isOpen ? 'is-active' : ''}`" type="button" @click="toggle">
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
       </span>
@@ -13,7 +9,7 @@
     <!-- the menu box that will show on user click -->
     <div v-if="isOpen" class="content">
       <ul>
-        <li v-for="({link, title}, index) in menuItems" :key="index">
+        <li v-for="({ link, title }, index) in menuItems" :key="index">
           <!-- <nuxt-link :to="link">{{ title }}</nuxt-link> -->
           <a :href="link">{{ title }}</a>
           <!-- <a @click="goto(link)">{{ title }}</a> -->
@@ -45,15 +41,15 @@ export default {
           title: 'Home'
         },
         {
-          link: 'about',
+          link: 'https://m.grainer.io/about',
           title: 'About Us'
         },
         {
-          link: 'career',
+          link: 'https://m.grainer.io/career',
           title: 'Career'
         },
         {
-          link: 'contact',
+          link: 'https://m.grainer.io/contact',
           title: 'Contact Us'
         }
       ]
@@ -88,7 +84,7 @@ export default {
   }
 
   img {
-    width: 200px;
+    width: 45vw;
   }
 
   .transparent {
