@@ -11,7 +11,7 @@
         <crafting :showimage="activePage === 2"></crafting>
       </div>
       <div data-anchor="page3">
-        <help></help>
+        <consultancy></consultancy>
       </div>
       <div data-anchor="page4">
         <start></start>
@@ -26,7 +26,7 @@
 import Pageable from 'pageable'
 import Start from '@/components/Start'
 import Crafting from '@/components/Crafting'
-import Help from '@/components/Help'
+import Consultancy from '@/components/Consultancy'
 import Pagination from '@/components/Pagination'
 import Next from '@/components/Next'
 export default {
@@ -40,7 +40,7 @@ export default {
     // eslint-disable-next-line vue/no-unused-components
     crafting: Crafting,
     // eslint-disable-next-line vue/no-unused-components
-    help: Help
+    consultancy: Consultancy
   },
   data() {
     return {

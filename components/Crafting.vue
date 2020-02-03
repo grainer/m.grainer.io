@@ -9,7 +9,8 @@
       is
       <br />our commitment and passion
     </h1>
-    <gbutton addclass="gbutton">Contact Us</gbutton>
+    <div class="w-16 h-2 bg-gr-green-light mt-1 md:h-3 md:mt-2 mb-2 md:mb-4"></div>
+    <h2>We are an IT company with expertise in Blockchain and Artificial Intelligence.</h2>
   </div>
 </template>
 
@@ -58,18 +59,28 @@ export default {
   align-content: center;
   display: flex;
   flex-direction: column;
+  font-family: 'Roboto', sans-serif;
 
   h1 {
-    font-size: 2rem;
+    font-size: 2.1rem;
     font-weight: bold;
-    line-height: 1.62;
+    line-height: 1.5;
     letter-spacing: 0.65px;
     text-align: left;
     color: #ffffff;
     z-index: 1;
   }
 
+  h2 {
+    font-family: Glegoo;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.82;
+    text-align: left;
+  }
+
   .gbutton {
+    margin-top: 1rem;
     width: 50%;
   }
 }

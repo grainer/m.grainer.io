@@ -35,22 +35,23 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import '../assets/css/grainer';
 // font sizes are set by tailwind
 .textholder {
   text-align: left;
   color: #ffffff;
-  font-weight: bold;
 
   h1 {
     font-family: Roboto;
     line-height: 1.2;
+    font-weight: bold;
     letter-spacing: 0.15rem;
     color: #ffffff;
   }
 
   p {
     font-family: Glegoo;
-    line-height: 1.79;
+    line-height: 1.5;
   }
 
   a {
