@@ -25,6 +25,12 @@
       <div data-anchor="page7">
         <rethink></rethink>
       </div>
+      <div data-anchor="page8">
+        <tech></tech>
+      </div>
+      <div data-anchor="page9">
+        <contact></contact>
+      </div>
     </div>
     <next :onclick="() => pages.next()"></next>
   </div>
@@ -40,6 +46,8 @@ import Development from '@/components/Development'
 import Innovation from '@/components/Innovation'
 import Starting from '@/components/Starting'
 import Rethink from '@/components/Rethink'
+import Tech from '@/components/Tech'
+import Contact from '@/components/Contact'
 
 import Pagination from '@/components/Pagination'
 import Next from '@/components/Next'
@@ -53,7 +61,9 @@ export default {
     development: Development,
     innovation: Innovation,
     starting: Starting,
-    rethink: Rethink
+    rethink: Rethink,
+    tech: Tech,
+    contact: Contact
   },
   data() {
     return {
