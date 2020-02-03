@@ -19,6 +19,12 @@
       <div data-anchor="page5">
         <innovation></innovation>
       </div>
+      <div data-anchor="page6">
+        <starting></starting>
+      </div>
+      <div data-anchor="page7">
+        <rethink></rethink>
+      </div>
     </div>
     <next :onclick="() => pages.next()"></next>
   </div>
@@ -32,6 +38,9 @@ import Crafting from '@/components/Crafting'
 import Consultancy from '@/components/Consultancy'
 import Development from '@/components/Development'
 import Innovation from '@/components/Innovation'
+import Starting from '@/components/Starting'
+import Rethink from '@/components/Rethink'
+
 import Pagination from '@/components/Pagination'
 import Next from '@/components/Next'
 export default {
@@ -42,7 +51,9 @@ export default {
     crafting: Crafting,
     consultancy: Consultancy,
     development: Development,
-    innovation: Innovation
+    innovation: Innovation,
+    starting: Starting,
+    rethink: Rethink
   },
   data() {
     return {
