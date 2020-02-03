@@ -1,7 +1,12 @@
 <template>
   <div class="my-24">
     <!-- about grainer -->
-    <row justify="center md:justify-between" align="center" addclass="py-24 px-12 md:px-24">
+    <row
+      justify="center md:justify-between"
+      wrap="reverse"
+      align="center"
+      addclass="px-12 md:px-24"
+    >
       <column justify="center md:justify-start" width="2/5">
         <h1 class="boom">
           ABOUT
@@ -9,13 +14,13 @@
           <span class="px-4">GRAINER</span>
         </h1>
       </column>
-      <column width="2/5">
-        <img :src="require('@/static/logo-outline.svg')" />
+      <column width="2/5" justify="center">
+        <img id="logo-grainer" :src="require('@/static/logo-outline.svg')" i />
       </column>
     </row>
 
     <!-- our passion -->
-    <row justify="between" align="center" addclass="my-24 px-12 md:px-24">
+    <row justify="between" wrap="reverse" align="center" addclass="my-24 px-12 md:px-24">
       <column width="3/5">
         <textholder
           title="Our passion is to transform processes and enhance experiences for businesses who want to win"
@@ -50,8 +55,10 @@
       <column width="4/12">
         <textholder title="MEMBERSHIPS"></textholder>
       </column>
-      <column justify="around flex-wrap" align="center" width="7/12">
+      <column justify="around flex-wrap" align="center" width="3/12">
         <img :src="require('@/assets/img/faom.png')" width="180px" />
+      </column>
+      <column justify="around flex-wrap" align="center" width="3/12">
         <img :src="require('@/assets/img/access.png')" width="362px" />
       </column>
     </row>
@@ -67,8 +74,8 @@
       <column justify="center" width="1/3">
         <joincard></joincard>
       </column>
+      <contact title="We would like to hear from you"></contact>
     </row>
-    <contact title="We would like to hear from you"></contact>
   </div>
 </template>
 
@@ -201,6 +208,8 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/css/grainer';
+
 /* font size is set by taiwind. */
 .boom {
   font-family: Roboto;
@@ -208,18 +217,17 @@ export default Vue.extend({
   line-height: 1.2;
   color: white;
 
-  @media screen and (min-width: 720px) {
-    font-size: 6rem;
-    text-align: left;
-  }
-  @media screen and (max-width: 360px) {
-    font-size: 3rem;
-    text-align: center;
-  }
+  font-size: 3rem;
+  text-align: center;
 
   span {
-    color: #002018;
-    background-color: #02f6b6;
+    color: $bg-color;
+    background-color: $grainer-color;
   }
+}
+
+#logo-grainer {
+  width: 80vw;
+  max-height: 80vh;
 }
 </style>

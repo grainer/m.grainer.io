@@ -1,5 +1,5 @@
 <template functional>
-  <div class="flex flex-col h-full justify-center pr-24">
+  <div class="flex flex-col h-full justify-center pr-8">
     <img v-show="props.showimage" :src="require('@/assets/img/mapbox.png')" class="mapbox" />
     <textholder title="CALL" :link="{title: '+6012 244 1566', href:'https://wa.me/60122441566'}"></textholder>
     <textholder title="EMAIL" :link="{title: 'info@grainer.io', href:'mailto:info@grainer.io'}"></textholder>

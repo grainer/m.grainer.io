@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen px-12">
+  <div class="h-screen px-10">
     <img :src="require('@/assets/img/mapbox.png')" class="mapbox" />
     <contact></contact>
   </div>

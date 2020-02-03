@@ -29,7 +29,7 @@
         <tech></tech>
       </div>
       <div data-anchor="page9">
-        <contact></contact>
+        <contact :showimage="activePage === 9"></contact>
       </div>
     </div>
     <next :onclick="() => pages.next()"></next>
