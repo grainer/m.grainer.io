@@ -41,7 +41,6 @@ export default {
   width: 100vw;
   height: 100vh;
   opacity: 0.1;
-  background-image: url('../assets/img/bio.png');
   background-size: cover;
   -ms-background-size: cover;
   -o-background-size: cover;

@@ -7,7 +7,7 @@
       </h1>
     </div>
     <video v-show="props.showvideo" class="bgvideo" autoplay muted loop>
-      <source :src="require('@/assets/vid/seed.mp4')" type="video/mp4" />
+      <source :src="require('@/assets/vid/seed-m-cp.mp4')" type="video/mp4" />
     </video>
   </div>
 </template>
