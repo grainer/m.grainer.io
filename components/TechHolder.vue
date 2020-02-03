@@ -1,47 +1,46 @@
-<template>
-  <div v-tilt="{speed: 800, perspective: 100, glare: true, scale: 1.1}" class="flex mx-12 flex-col">
-    <a :href="link" target="blank">
-      <img
-        width="120em"
-        :class="hover ? 'normal' : 'greyscale'"
-        :src="icon"
-        @mouseover="hover = true"
-        @mouseleave="hover = false"
-      />
-      <div v-if="hover" class="relative w-full text-center font-semibold mt-3">{{name}}</div>
-    </a>
-  </div>
+<template functional>
+  <a class="techholder" :href="props.link">
+    <center>
+      <img :src="props.icon" />
+      <h1 class="my-4 md:mx-8">{{ props.name }}</h1>
+    </center>
+  </a>
 </template>
 
 <script>
 export default {
+  functional: true,
   props: {
     name: {
-      type: String
+      type: String,
+      default: 'No Title'
     },
     icon: {
-      type: String
+      type: String,
+      default: '@/assets/img/nem.svg'
     },
     link: {
-      type: String
-    }
-  },
-  data() {
-    return {
-      hover: false
+      type: String,
+      default: 'https://nem.io'
     }
   }
 }
 </script>
 
-<style>
-.normal {
-  -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(0%);
-}
+<style lang="scss" scoped>
+@import '../assets/css/grainer';
 
-.greyscale {
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
+.techholder {
+  max-width: 25vw;
+  padding: 1rem 1rem 1rem 1rem;
+
+  img {
+    filter: sepia(1) contrast(35%) hue-rotate(69deg);
+    -webkit-filter: sepia(1) contrast(35%) hue-rotate(69deg);
+  }
+
+  h1 {
+    font-family: 'Taviraj', serif;
+  }
 }
 </style>

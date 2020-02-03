@@ -1,23 +1,23 @@
 <template functional>
   <div class="card-container">
-    <img class="avatar" :src="props.img" height="150px" />
+    <img :src="props.img" class="avatar" height="150px" />
     <dl>
       <dt>{{ props.name }}</dt>
       <dd>{{ props.position }}</dd>
     </dl>
     <ul>
       <li>
-        <a class="interactive" :href="props.facebook" target="_blank">
+        <a :href="props.facebook" class="interactive" target="_blank">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
       <li>
-        <a class="interactive" :href="props.linkedin" target="_blank">
+        <a :href="props.linkedin" class="interactive" target="_blank">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
       <li>
-        <a class="interactive" :href="props.medium" target="_blank">
+        <a :href="props.medium" class="interactive" target="_blank">
           <i class="fab fa-medium-m"></i>
         </a>
       </li>

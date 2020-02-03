@@ -1,0 +1,24 @@
+/* import statemet */
+@import url('https://fonts.googleapis.com/css?family=Glegoo|Roboto:400,700|Taviraj:400,700&display=swap');
+
+/* variables */
+$bg-color: #011b14;
+$input-color: #012b20;
+$grainer-color: #02f6b6;
+
+/* mixins and reusable classes */
+@mixin idea {
+  color: black;
+  background-color: $grainer-color;
+}
+
+@mixin help-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.25;
+  letter-spacing: 0.4px;
+  text-align: left;
+  color: #ffffff;
+  border-left: 0.5rem solid $grainer-color;
+  padding-left: 0.5rem;
+}

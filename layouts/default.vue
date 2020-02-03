@@ -1,12 +1,12 @@
 <template>
   <main class="text-white font-p">
-    <!-- <navigation class="fixed z-50 h-20 w-full inset-x-0 top-0"></navigation> -->
-    <nuxt class="z-0" />
+    <navigation></navigation>
+    <nuxt class="relative z-10" />
   </main>
 </template>
 
 <script>
-// import Navigation from '@/components/Navigation'
+import Navigation from '@/components/Navigation'
 
 import '@/plugins/revealer/modernizr-custom'
 import '@/plugins/revealer/classie'
@@ -17,7 +17,7 @@ import { EventBus } from '@/plugins/eventBus.js'
 
 export default {
   components: {
-    // Navigation
+    Navigation
   },
   data() {
     return {

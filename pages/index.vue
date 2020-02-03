@@ -1,107 +1,121 @@
 <template>
-  <div>
-    <section id="snap-container">
-      <div class="page flex justify-center items-center" data-anchor="home">
-        <start></start>
+  <div id="index">
+    <div id="index-nav">
+      <pagination :totalpages="noOfPages" :currentpage="activePage"></pagination>
+    </div>
+    <div id="index-content">
+      <div data-anchor="page1">
+        <start :showvideo="activePage === 1"></start>
       </div>
-      <div class="page flex justify-center items-center" data-anchor="us">
-        <crafting></crafting>
+      <div data-anchor="page2">
+        <crafting :showimage="activePage === 2"></crafting>
       </div>
-      <div class="page flex justify-center items-center" data-anchor="help">
-        <help></help>
+      <div data-anchor="page3">
+        <consultancy></consultancy>
       </div>
-      <div class="page flex justify-center items-center" data-anchor="rethink">
+      <div data-anchor="page4">
+        <development></development>
+      </div>
+      <div data-anchor="page5">
+        <innovation></innovation>
+      </div>
+      <div data-anchor="page6">
+        <starting></starting>
+      </div>
+      <div data-anchor="page7">
         <rethink></rethink>
       </div>
-      <div class="page flex justify-center items-center" data-anchor="tech">
+      <div data-anchor="page8">
         <tech></tech>
       </div>
-      <div class="page flex justify-center items-center" data-anchor="contact">
-        <contact title="Contact Us" :form="false"></contact>
+      <div data-anchor="page9">
+        <contact :showimage="activePage === 9"></contact>
       </div>
-    </section>
-    <!-- Dot Navigation begins -->
-    <div class="fixed bottom-0 w-full pb-10 dotstyle dotstyle-smalldotstroke">
-      <!-- Next button -->
-      <next-bt class="interactive"></next-bt>
-
-      <!-- <ul class="flex justify-center items-center">
-        <li v-for="(page, index) in pages" :key="index" :class="`${index === pageIndex ? 'current' : ''} ${index < pageIndex ? 'past' : ''}`">
-          <a :href="`#${page}`" class="interactive">Home</a>
-        </li>
-      </ul>-->
     </div>
+    <next :onclick="() => pages.next()"></next>
   </div>
 </template>
 
 <script>
-// import _ from 'lodash-es'
+// eslint-disable-next-line no-unused-vars
 import Pageable from 'pageable'
-import { EventBus } from '@/plugins/eventBus.js'
-const Start = () => import('@/components/Start')
-const Crafting = () => import('@/components/Crafting')
-const Help = () => import('@/components/Help')
-const Rethink = () => import('@/components/Rethink')
-const Tech = () => import('@/components/Tech')
-const Contact = () => import('@/components/Contact')
-const Next = () => import('@/components/Next')
+import Start from '@/components/Start'
+import Crafting from '@/components/Crafting'
+import Consultancy from '@/components/Consultancy'
+import Development from '@/components/Development'
+import Innovation from '@/components/Innovation'
+import Starting from '@/components/Starting'
+import Rethink from '@/components/Rethink'
+import Tech from '@/components/Tech'
+import Contact from '@/components/Contact'
 
+import Pagination from '@/components/Pagination'
+import Next from '@/components/Next'
 export default {
-  name: 'Index',
   components: {
-    Start,
-    Crafting,
-    Help,
-    Rethink,
-    Tech,
-    Contact,
-    'next-bt': Next
+    start: Start,
+    pagination: Pagination,
+    next: Next,
+    crafting: Crafting,
+    consultancy: Consultancy,
+    development: Development,
+    innovation: Innovation,
+    starting: Starting,
+    rethink: Rethink,
+    tech: Tech,
+    contact: Contact
   },
   data() {
     return {
-      pages: ['home', 'us', 'help', 'rethink', 'tech', 'contact']
-    }
-  },
-  computed: {
-    pageIndex() {
-      return this.$store.getters.getIndex
-    },
-    precent() {
-      return this.$store.getters.getPercentage
-    },
-    pageable() {
-      return this.$store.getters.getPageable
+      pages: null,
+      noOfPages: 6,
+      activePage: 1,
+      showVideo: true
     }
   },
   mounted() {
-    // we emit this to refresh the interactive cursors elements
-    EventBus.$emit('inner-routing')
+    // get the element that holds the pages
+    const contentHolder = document.getElementById('index-content')
+    this.noOfPages = contentHolder.childElementCount
 
-    this.$store.commit(
-      'populate',
-      new Pageable('#snap-container', {
-        delay: 1000,
-        throttle: 1500
-      })
-    )
-
-    this.$store.dispatch('init')
-
-    this.$store.dispatch('listen')
-  },
-  destroyed() {
-    this.$store.dispatch('clean')
-  },
-  methods: {
-    nextPage() {
-      this.$store.commit('nextPage')
-    },
-    prevPage() {
-      this.$store.commit('prevPage')
-    }
+    /*
+      Pageable, a full page scrolling utility.
+      original works by Karl (https://github.com/Mobius1/Pageable)
+    */
+    this.pages = new Pageable(contentHolder, {
+      pips: false, // we need no pips
+      orientation: 'vertical',
+      onFinish: ({ index }) => {
+        this.activePage = index + 1 // if scroll animation end, update active page no
+      }
+    })
   }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import '../assets/css/grainer';
+
+#index {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+#index-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  width: 20%;
+  line-height: 10vh;
+  max-width: 20%;
+  align-content: center;
+  -webkit-align-content: center;
+}
+
+#index-content {
+  width: 80%;
+}
 </style>
