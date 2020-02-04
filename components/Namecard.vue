@@ -6,19 +6,29 @@
       <dd>{{ props.position }}</dd>
     </dl>
     <ul>
-      <li>
-        <a :href="props.facebook" class="interactive" target="_blank">
+      <li v-if="props.social.facebook">
+        <a :href="props.social.facebook" class="interactive" target="_blank">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
-      <li>
-        <a :href="props.linkedin" class="interactive" target="_blank">
+      <li v-if="props.social.instagram">
+        <a :href="props.social.instagram" class="interactive" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </li>
+      <li v-if="props.social.linkedin">
+        <a :href="props.social.linkedin" class="interactive" target="_blank">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
-      <li>
-        <a :href="props.medium" class="interactive" target="_blank">
+      <li v-if="props.social.medium">
+        <a :href="props.social.medium" class="interactive" target="_blank">
           <i class="fab fa-medium-m"></i>
+        </a>
+      </li>
+      <li v-if="props.social.behance">
+        <a :href="props.social.behance" class="interactive" target="_blank">
+          <i class="fab fa-behance"></i>
         </a>
       </li>
     </ul>
@@ -44,17 +54,15 @@ export default {
       type: String,
       default: 'this is position'
     },
-    facebook: {
-      type: String,
-      default: 'http://facebook.com'
-    },
-    medium: {
-      type: String,
-      default: 'http://medium.com'
-    },
-    linkedin: {
-      type: String,
-      default: 'http://linkedin.com'
+    social: {
+      type: Object,
+      default: () => ({
+        facebook: undefined,
+        instagram: undefined,
+        linkedin: undefined,
+        medium: undefined,
+        behance: undefined
+      })
     }
   }
 }

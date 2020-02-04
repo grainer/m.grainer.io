@@ -56,20 +56,29 @@
         <textholder title="MEMBERSHIPS"></textholder>
       </column>
       <column justify="around flex-wrap" align="center" width="3/12">
-        <img :src="require('@/assets/img/faom.png')" width="180px" />
+        <a href="https://www.fintechmalaysia.org/" target="_blank">
+          <img :src="require('@/assets/img/faom.png')" width="180px" />
+        </a>
       </column>
       <column justify="around flex-wrap" align="center" width="3/12">
-        <img :src="require('@/assets/img/access.png')" width="362px" />
+        <a href="https://access-my.org/" target="_blank">
+          <img :src="require('@/assets/img/access.png')" width="362px" />
+        </a>
       </column>
     </row>
 
     <!-- team avatar -->
     <row justify="center" addclass="my-24 px-12 sm:px-24">
       <column width="full">
-        <textholder title="TEAMS"></textholder>
+        <textholder title="THE TEAM"></textholder>
       </column>
       <column v-for="person in teams" :key="person.name" justify="center" width="1/3">
-        <namecard :img="person.img" :name="person.name" :position="person.position"></namecard>
+        <namecard
+          :img="person.img"
+          :name="person.name"
+          :position="person.position"
+          :social="person.social"
+        ></namecard>
       </column>
       <column justify="center" width="1/3">
         <joincard></joincard>
@@ -99,17 +108,11 @@ import avNur from '@/assets/img/Nur.svg'
 
 export default Vue.extend({
   components: {
-    // eslint-disable-next-line vue/no-unused-components
     column: Col,
-    // eslint-disable-next-line vue/no-unused-components
     row: Row,
-    // eslint-disable-next-line vue/no-unused-components
     textholder: Textholder,
-    // eslint-disable-next-line vue/no-unused-components
     namecard: Namecard,
-    // eslint-disable-next-line vue/no-unused-components
     joincard: Joincard,
-    // eslint-disable-next-line vue/no-unused-components
     contact: Contact
   },
   data() {
@@ -119,65 +122,49 @@ export default Vue.extend({
           img: avMajed,
           name: 'ABDUL MAJED AHMAD',
           position: 'Co-Founder & CEO',
-          facebook: '',
-          medium: '',
-          linkedin: ''
+          social: { linkedin: 'https://www.linkedin.com/in/amajed/' }
         },
         {
           img: avAmine,
           name: 'BEKKAI AMINE FATAH',
           position: 'Co-Founder & CTO',
-          facebook: '',
-          medium: '',
-          linkedin: ''
+          social: { linkedin: 'https://www.linkedin.com/in/amine-fatah-61312a121/' }
         },
         {
           img: avDanial,
           name: 'danial syahiran ho',
-          position: 'CEO Propshift',
-          facebook: '',
-          medium: '',
-          linkedin: ''
+          position: 'Business Development Lead',
+          social: { linkedin: '' }
         },
         {
           img: avNur,
           name: 'NUR AZEHA YUSOF',
           position: 'Front-End Developer',
-          facebook: '',
-          medium: '',
-          linkedin: ''
+          social: { linkedin: 'https://www.linkedin.com/in/zeha-yusof-9307b8146' }
         },
         {
           img: avIskandar,
           name: 'MUHAMAD ISKANDAR',
           position: 'Back-end Developer',
-          facebook: '',
-          medium: '',
-          linkedin: ''
+          social: { linkedin: 'http://www.linkedin.com/in/mehmedskndr' }
         },
         {
           img: avImam,
-          name: 'The Batman',
+          name: 'Imam Khaira',
           position: 'Front-End Developer',
-          facebook: '',
-          medium: '',
-          linkedin: ''
+          social: { linkedin: 'https://www.linkedin.com/in/imam-k-89735b112' }
         },
         {
           img: avAnas,
           name: 'MOHAMMAD ANAS',
           position: 'Web Developer',
-          facebook: '',
-          medium: '',
-          linkedin: ''
+          social: { linkedin: 'https://www.linkedin.com/in/muhamad-anas/' }
         },
         {
           img: avFaraz,
           name: 'MUHAMMED FARAZ',
           position: 'Brand Strategist',
-          facebook: '',
-          medium: '',
-          linkedin: ''
+          social: { linkedin: 'https://www.linkedin.com/in/muhammed-faraz-faizal-6345b1155/' }
         }
       ],
       social: [
