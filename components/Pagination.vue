@@ -46,9 +46,9 @@ export default {
 
 .nav {
   position: relative;
-  width: 8em;
+  width: 8rem;
   z-index: 100;
-  margin: 0 0 0 3em;
+  margin: 3rem 0 0 2rem;
 
   .nav__item {
     line-height: 1;
@@ -102,7 +102,7 @@ export default {
   line-height: 2;
   display: block;
   white-space: nowrap;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   opacity: 0;
   color: $grainer-color;

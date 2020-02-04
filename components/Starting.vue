@@ -1,9 +1,9 @@
 <template functional>
   <div class="flex h-full pr-20 flex-col justify-center">
-    <img :src="require('@/assets/img/illustration-2-2.png')" />
+    <img :src="require('@/assets/img/illustration-1-2.png')" />
     <textholder
-      title="RETHINKING YOUR SOLUTION?"
-    >Our consulting and development teams analyze your existing system and recommend solutions that would make your business relevant to the ever-changing industry standards.</textholder>
+      title="STARTING FROM SCRATCH"
+    >Our highly skilled developers can convert your big ideas into reliable and robust code. Paired with expert designers, we can guarantee your final product will be seamless, intuitive, and engaging.</textholder>
     <gbutton addclass="mt-8 mr-24">Talk To Us</gbutton>
   </div>
 </template>

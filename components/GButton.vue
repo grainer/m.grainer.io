@@ -1,7 +1,7 @@
 <template functional>
   <button
-    @click="props.onclick"
     :class="`px-${props.padx} py-${props.pady} rounded-lg rounded-tr-none border-gr-green-light border-2 font-sh outline-none slide interactive ${props.addclass}`"
+    @click="props.onclick"
   >
     <slot></slot>
   </button>
@@ -23,7 +23,7 @@ export default {
     },
     padx: {
       type: String,
-      default: '6'
+      default: '2'
     },
     addclass: {
       type: String,

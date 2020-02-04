@@ -8,13 +8,28 @@
         <start :showvideo="activePage === 1"></start>
       </div>
       <div data-anchor="page2">
-        <crafting></crafting>
+        <crafting :showimage="activePage === 2"></crafting>
       </div>
       <div data-anchor="page3">
-        <help></help>
+        <consultancy></consultancy>
       </div>
       <div data-anchor="page4">
-        <start></start>
+        <development></development>
+      </div>
+      <div data-anchor="page5">
+        <innovation></innovation>
+      </div>
+      <div data-anchor="page6">
+        <starting></starting>
+      </div>
+      <div data-anchor="page7">
+        <rethink></rethink>
+      </div>
+      <div data-anchor="page8">
+        <tech></tech>
+      </div>
+      <div data-anchor="page9">
+        <contact :showimage="activePage === 9"></contact>
       </div>
     </div>
     <next :onclick="() => pages.next()"></next>
@@ -26,21 +41,29 @@
 import Pageable from 'pageable'
 import Start from '@/components/Start'
 import Crafting from '@/components/Crafting'
-import Help from '@/components/Help'
+import Consultancy from '@/components/Consultancy'
+import Development from '@/components/Development'
+import Innovation from '@/components/Innovation'
+import Starting from '@/components/Starting'
+import Rethink from '@/components/Rethink'
+import Tech from '@/components/Tech'
+import Contact from '@/components/Contact'
+
 import Pagination from '@/components/Pagination'
 import Next from '@/components/Next'
 export default {
   components: {
-    // eslint-disable-next-line vue/no-unused-components
     start: Start,
-    // eslint-disable-next-line vue/no-unused-components
     pagination: Pagination,
-    // eslint-disable-next-line vue/no-unused-components
     next: Next,
-    // eslint-disable-next-line vue/no-unused-components
     crafting: Crafting,
-    // eslint-disable-next-line vue/no-unused-components
-    help: Help
+    consultancy: Consultancy,
+    development: Development,
+    innovation: Innovation,
+    starting: Starting,
+    rethink: Rethink,
+    tech: Tech,
+    contact: Contact
   },
   data() {
     return {
