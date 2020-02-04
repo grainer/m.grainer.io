@@ -4,8 +4,8 @@
     <textholder title="CALL" :link="{title: '+6012 244 1566', href:'https://wa.me/60122441566'}"></textholder>
     <textholder title="EMAIL" :link="{title: 'info@grainer.io', href:'mailto:info@grainer.io'}"></textholder>
     <h1 class="address">
-      Tier 2 Warehouse Wisma Commercedotcom
-      Jalan Tandang 51/204a46050
+      Tier 2 The Warehouse Wisma Commercedotcom
+      Jalan Tandang 51/204 46050
       Petaling Jaya, Selangor, Malaysia
     </h1>
   </div>
