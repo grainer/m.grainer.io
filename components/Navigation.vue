@@ -1,19 +1,18 @@
 <template>
   <nav :class="`navbar ${!transparent ? 'transparent' : ''} ${addclass}`">
-    <img :src="require('@/static/logo@2x.png')" />
-    <button
-      :class="`hamburger hamburger--minus ${isOpen ? 'is-active' : ''}`"
-      type="button"
-      @click="toggle"
-    >
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
-    </button>
+    <a href="https://m.grainer.io"><img :src="require('@/static/logo@2x.png')"/></a>
+    <div class="header-buttons">
+      <icon-button href="https://api.whatsapp.com/send?phone=60122441566&text=&source=&data=" icon="fab fa-whatsapp"></icon-button>
+      <button :class="`hamburger hamburger--minus ${isOpen ? 'is-active' : ''}`" type="button" @click="toggle">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>
     <!-- the menu box that will show on user click -->
     <div v-if="isOpen" class="content">
       <ul>
-        <li v-for="({link, title}, index) in menuItems" :key="index">
+        <li v-for="({ link, title }, index) in menuItems" :key="index">
           <!-- <nuxt-link :to="link">{{ title }}</nuxt-link> -->
           <a :href="link">{{ title }}</a>
           <!-- <a @click="goto(link)">{{ title }}</a> -->
@@ -24,8 +23,13 @@
 </template>
 
 <script>
+import IconButton from './IconButton.vue'
+
 export default {
   name: 'Navigation',
+  components: {
+    IconButton
+  },
   props: {
     addclass: {
       type: String,
@@ -45,15 +49,15 @@ export default {
           title: 'Home'
         },
         {
-          link: 'about',
+          link: 'https://m.grainer.io/about',
           title: 'About Us'
         },
         {
-          link: 'career',
+          link: 'https://m.grainer.io/career',
           title: 'Career'
         },
         {
-          link: 'contact',
+          link: 'https://m.grainer.io/contact',
           title: 'Contact Us'
         }
       ]
@@ -79,6 +83,7 @@ export default {
   top: 0%;
   width: 100vw;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
 
@@ -88,7 +93,7 @@ export default {
   }
 
   img {
-    width: 200px;
+    width: 45vw;
   }
 
   .transparent {
@@ -120,6 +125,18 @@ export default {
         transition: background 0s;
       }
     }
+  }
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  a {
+    margin-bottom: 4px;
+    padding: 2px 8px;
+    color: black;
+    background-color: #02f6b6;
+    border-radius: 7px 0px 7px 7px;
   }
 }
 </style>
