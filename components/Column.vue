@@ -1,8 +1,5 @@
 <template functional>
-  <div
-    :id="id"
-    :class="`flex items-${props.align} justify-${props.justify} w-full pb-10 md:pb-0 md:w-${props.width} ${props.addclass}`"
-  >
+  <div :id="id" :class="`flex items-${props.align} justify-${props.justify} w-${props.width} `">
     <slot></slot>
   </div>
 </template>
@@ -19,7 +16,7 @@ export default {
     /* https://tailwindcss.com/docs/align-items/#app */
     align: {
       type: String,
-      default: null
+      default: 'center'
     },
     /* https://tailwindcss.com/docs/justify-items/#app */
     justify: {
@@ -29,7 +26,7 @@ export default {
     /* https://tailwindcss.com/docs/width/#app */
     width: {
       type: String,
-      default: null
+      default: ''
     },
     /* any tailwindcss class that works with flex */
     addclass: {

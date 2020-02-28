@@ -1,6 +1,6 @@
 <template functional>
   <div class="card-container">
-    <img :src="props.img" class="avatar" height="150px" />
+    <img :src="props.img" class="avatar" />
     <dl>
       <dt>{{ props.name }}</dt>
       <dd>{{ props.position }}</dd>
@@ -80,23 +80,27 @@ export default {
   @extend %flexbox;
   flex-direction: column;
   width: 20rem;
-  height: 30rem;
+  height: 20rem;
   margin: 1rem 0 1rem 0;
 
+  img {
+    height: 8rem;
+  }
+
   dl {
-    margin: 3rem 0 0.5rem 0;
+    margin: 2rem 0 0.5rem 0;
     font-family: Taviraj;
     text-align: center;
 
     dt {
-      font-size: 1.3rem;
+      font-size: 0.8rem;
       font-weight: 700;
       color: #02f6b6;
       text-transform: uppercase;
     }
 
     dd {
-      font-size: 1.2rem;
+      font-size: 0.7rem;
       font-weight: 400;
       color: #ffffff;
     }
