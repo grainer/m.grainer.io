@@ -1,10 +1,6 @@
 <template functional>
   <a :href="props.href" class="join interactive" target="_blank">
-    <h1>
-      join
-      <br />the
-      <br />grainer family
-    </h1>
+    <h1>join the <br />grainer family</h1>
     <i class="fas fa-plus-circle"></i>
   </a>
 </template>
@@ -25,23 +21,22 @@ export default {
 <style lang="scss" scoped>
 .join {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  width: 20rem;
-  height: 30rem;
+  width: 100%;
+  padding: 1rem 0;
   color: #02f6b6;
   border: solid 2px #02f6b6;
-  padding: 1rem 3rem;
   font-family: Roboto;
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: bold;
   line-height: 1.2;
   text-align: left;
   text-transform: uppercase;
 
   i {
-    font-size: 5rem;
+    font-size: 2.5rem;
   }
 
   &:hover {
