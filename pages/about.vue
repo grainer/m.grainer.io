@@ -132,22 +132,6 @@ export default Vue.extend({
           linkedin: ''
         },
         {
-          img: avDanial,
-          name: 'danial syahiran ho',
-          position: 'CEO Propshift',
-          facebook: '',
-          medium: '',
-          linkedin: ''
-        },
-        {
-          img: avNur,
-          name: 'NUR AZEHA YUSOF',
-          position: 'Front-End Developer',
-          facebook: '',
-          medium: '',
-          linkedin: ''
-        },
-        {
           img: avIskandar,
           name: 'MUHAMAD ISKANDAR',
           position: 'Back-end Developer',
@@ -157,16 +141,8 @@ export default Vue.extend({
         },
         {
           img: avImam,
-          name: 'The Batman',
+          name: 'IMAM MIFTAHUL KHAIRA',
           position: 'Front-End Developer',
-          facebook: '',
-          medium: '',
-          linkedin: ''
-        },
-        {
-          img: avAnas,
-          name: 'MOHAMMAD ANAS',
-          position: 'Web Developer',
           facebook: '',
           medium: '',
           linkedin: ''
