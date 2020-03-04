@@ -123,6 +123,18 @@ export default Vue.extend({
           social: { linkedin: 'https://www.linkedin.com/in/amine-fatah-61312a121/' }
         },
         {
+          img: avDanial,
+          name: 'danial syahiran ho',
+          position: 'Business Development Lead',
+          social: { linkedin: '' }
+        },
+        {
+          img: avNur,
+          name: 'NUR AZEHA YUSOF',
+          position: 'Front-End Developer',
+          social: { linkedin: 'https://www.linkedin.com/in/zeha-yusof-9307b8146' }
+        },
+        {
           img: avIskandar,
           name: 'MUHAMAD ISKANDAR',
           position: 'Back-end Developer',
@@ -130,9 +142,15 @@ export default Vue.extend({
         },
         {
           img: avImam,
-          name: 'IMAM MIFTAHUL KHAIRA',
+          name: 'Imam Khaira',
           position: 'Front-End Developer',
           social: { linkedin: 'https://www.linkedin.com/in/imam-k-89735b112' }
+        },
+        {
+          img: avAnas,
+          name: 'MOHAMMAD ANAS',
+          position: 'Web Developer',
+          social: { linkedin: 'https://www.linkedin.com/in/muhamad-anas/' }
         },
         {
           img: avFaraz,
