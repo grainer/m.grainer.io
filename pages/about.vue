@@ -17,7 +17,7 @@
     <!-- our passion -->
     <row justify="between" wrap="reverse" align="center" addclass="my-24 px-12 md:px-24">
       <column width="full md:w-1/2">
-        <textholder title="Our passion is to transform processes and enhance experiences for businesses who want to win"></textholder>
+        <textholder title="Our passion is to transform processes and enhance experiences for businesses that want to win"></textholder>
       </column>
       <column width="full md:2/5">
         <img :src="require('@/assets/img/passion.png')" height="100%" />
@@ -37,8 +37,8 @@
         <textholder title="VISION">
           To be at the forefront of tech innovation
           <br />
-          <br />Over time, we have been successful in bringing together like-minded businesses and technology developers with the deepest knowledge in their own domains. We believe
-          that technology is an asset through which we challenge the norms and disrupt the status quo!
+          <!-- <br />Over time, we have been successful in bringing together like-minded businesses and technology developers with the deepest knowledge in their own domains. We believe
+          that technology is an asset through which we challenge the norms and disrupt the status quo! -->
         </textholder>
       </column>
     </row>
@@ -90,13 +90,13 @@ import Col from '@/components/Column.vue'
 import Contact from '@/components/Contact.vue'
 
 import avAmine from '@/assets/img/Amine.svg'
-import avAnas from '@/assets/img/Anas.svg'
+// import avAnas from '@/assets/img/Anas.svg'
 import avDanial from '@/assets/img/Danial.svg'
 import avFaraz from '@/assets/img/Faraz.svg'
 import avImam from '@/assets/img/Imam.svg'
 import avIskandar from '@/assets/img/Iskandar.svg'
 import avMajed from '@/assets/img/Majed.svg'
-import avNur from '@/assets/img/Nur.svg'
+// import avNur from '@/assets/img/Nur.svg'
 
 export default Vue.extend({
   components: {
@@ -128,16 +128,16 @@ export default Vue.extend({
           position: 'Business Development Lead',
           social: { linkedin: '' }
         },
-        {
-          img: avNur,
-          name: 'NUR AZEHA YUSOF',
-          position: 'Front-End Developer',
-          social: { linkedin: 'https://www.linkedin.com/in/zeha-yusof-9307b8146' }
-        },
+        // {
+        //   img: avNur,
+        //   name: 'NUR AZEHA YUSOF',
+        //   position: 'Front-End Developer',
+        //   social: { linkedin: 'https://www.linkedin.com/in/zeha-yusof-9307b8146' }
+        // },
         {
           img: avIskandar,
           name: 'MUHAMAD ISKANDAR',
-          position: 'Back-end Developer',
+          position: 'Back-End Developer',
           social: { linkedin: 'http://www.linkedin.com/in/mehmedskndr' }
         },
         {
@@ -146,12 +146,12 @@ export default Vue.extend({
           position: 'Front-End Developer',
           social: { linkedin: 'https://www.linkedin.com/in/imam-k-89735b112' }
         },
-        {
-          img: avAnas,
-          name: 'MOHAMMAD ANAS',
-          position: 'Web Developer',
-          social: { linkedin: 'https://www.linkedin.com/in/muhamad-anas/' }
-        },
+        // {
+        //   img: avAnas,
+        //   name: 'MOHAMMAD ANAS',
+        //   position: 'Web Developer',
+        //   social: { linkedin: 'https://www.linkedin.com/in/muhamad-anas/' }
+        // },
         {
           img: avFaraz,
           name: 'MUHAMMED FARAZ',

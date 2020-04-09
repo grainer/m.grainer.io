@@ -5,12 +5,12 @@
       Crafting robust
       <br />enterprise
       <br />
-      <span class="idea px-2">IT Solutions</span>
+      <span class="idea px-2">IT solutions</span>
       is
-      <br />our commitment and passion
+      <br />our commitment and passion !
     </h1>
     <div class="w-16 h-2 bg-gr-green-light mt-1 md:h-3 md:mt-2 mb-2 md:mb-4"></div>
-    <h2>We are an IT company with expertise in Blockchain and Artificial Intelligence.</h2>
+    <!-- <h2>We are an IT company with expertise in Blockchain and Artificial Intelligence.</h2> -->
   </div>
 </template>
 
